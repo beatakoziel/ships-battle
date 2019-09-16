@@ -1,0 +1,252 @@
+.EMPTY{
+    background-color: lightblue;
+}
+.HIT{
+    background-color: red;
+}
+.MISS{
+    background-color: gray;
+}
+.SUNKEN{
+    background-color: black;
+}
+.LIVE{
+    background-color: blueviolet;
+}
+.ERROR{
+    background-color: gray;
+}
+
+/* This pattern is downloaded from www.toptal.com/designers/subtlepatterns/ */
+body {
+    background-image: url(img/background.png);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    color: #111;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+#caly {
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    background-color: #dddddd;
+    height: 100%;
+}
+
+#header
+{
+    padding-top:5px;
+    padding-bottom: 8px;
+    background-color: dimgrey;
+    margin-bottom: 12px;
+}
+
+h1{
+    text-align: center;
+    font-size: 30px;
+    color: #bcd6ff;
+    letter-spacing: 2px;
+}
+
+
+
+ th{
+
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+.active{
+	background-color:black;
+}
+.hover{
+	background-color:#ff0061;
+}
+
+th,tr,td{
+    width: 30px;
+    height: 30px;
+}
+
+
+#radio1 {
+	clear:both;
+	float:left;
+	width:50%;
+}
+
+#radio2 {
+	float:left;
+	width:50%;
+}
+
+.container
+{
+    text-align: center;
+    width: 50%;
+    float: left;
+
+}
+
+#log
+{
+    background-color: white;
+    width: 300px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+}
+
+input[type=text],
+input[type=password]
+{
+    width: 300px;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    margin-top: 10px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus
+{
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+    box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+    border: 2px solid #a5cda5;
+    background-color: #e9f3e9;
+    color: #428c42;
+}
+
+input[type=button]
+{
+    width: 300px;
+    background-color: #36b03c;
+    font-size:20px;
+    color: white;
+    padding: 15px 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    outline: none;
+}
+
+input[type=submit]:focus
+{
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+    box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+input[type=submit]:hover
+{
+    background-color: #37b93d;
+}
+
+#instruction
+{
+
+	height: 200px;
+	width: 100%;
+    font-size: 15px;
+}
+
+h2
+{
+
+    font-size: 20px;
+    text-align: left;
+}
+
+h3
+{
+
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#footer
+{
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+    background-color: dimgrey;
+    margin-top: 12px;
+    color: #bcd6ff;
+}
+
+#surrender
+{
+    text-align: right;
+    margin-top: 15px;
+    margin-right: 0px;
+
+}
+
+
+label
+{
+    font-size: 17px;
+    padding-bottom: 5px;
+}
+
+#reg{
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+a:active{
+    color:black;
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+a:link{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #444444;
+    text-decoration: underline;
+}
+
+.board {
+    width: 306px;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    grid-gap: 3px;
+    display: grid;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.box {
+    background: #fff; display: flex; justify-content: center; align-items: center;
+    font-size: 2rem; color: #222;
+}
+.box:hover {
+    background: #fafafa;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>STATKI</title>
+    <meta name="description" content="Projekt STATKI.">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shipsMatrix.css" type="text/css">
+    <script src="setShip.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+    </script>
+</head>
+
+<body onload="setShip();">
+
+<div id="header"><h1>Ultimate Statki</h1></div>
+
+<div id="caly">
+
+
+    <div id="radio1">
+        <h2> Wybierz jak duzy statek:</h2>
+
+        <form action="how_big">
+            <label><input type="radio" name="stat" value="3" checked>Czwórka<br></label>
+            <label><input type="radio" name="stat" value="2">Trójka<br></label>
+            <label><input type="radio" name="stat" value="1">Dwójka<br></label>
+            <label><input type="radio" name="stat" value="0">Jedynka</label>
+        </form>
+    </div>
+    <div id="radio2">
+        <h2> Wybierz orientacje statku: </h2>
+        <form action="ver_or_hor">
+            <label><input type="radio" name="orientation" value="pion" checked>Pion<br></label>
+            <label><input type="radio" name="orientation" value="poziom" >Poziom<br></label>
+        </form>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="container">
+        <br>
+        <h2>Twoja plansza: </h2>
+
+        <div class="board">
+            <div class="box fa" data-row="0" data-column="0"></div>
+            <div class="box fa" data-row="0" data-column="1"></div>
+            <div class="box fa" data-row="0" data-column="2"></div>
+            <div class="box fa" data-row="0" data-column="3"></div>
+            <div class="box fa" data-row="0" data-column="4"></div>
+            <div class="box fa" data-row="0" data-column="5"></div>
+            <div class="box fa" data-row="0" data-column="6"></div>
+            <div class="box fa" data-row="0" data-column="7"></div>
+            <div class="box fa" data-row="0" data-column="8"></div>
+            <div class="box fa" data-row="0" data-column="9"></div>
+
+            <div class="box fa" data-row="1" data-column="0"></div>
+            <div class="box fa" data-row="1" data-column="1"></div>
+            <div class="box fa" data-row="1" data-column="2"></div>
+            <div class="box fa" data-row="1" data-column="3"></div>
+            <div class="box fa" data-row="1" data-column="4"></div>
+            <div class="box fa" data-row="1" data-column="5"></div>
+            <div class="box fa" data-row="1" data-column="6"></div>
+            <div class="box fa" data-row="1" data-column="7"></div>
+            <div class="box fa" data-row="1" data-column="8"></div>
+            <div class="box fa" data-row="1" data-column="9"></div>
+
+            <div class="box fa" data-row="2" data-column="0"></div>
+            <div class="box fa" data-row="2" data-column="1"></div>
+            <div class="box fa" data-row="2" data-column="2"></div>
+            <div class="box fa" data-row="2" data-column="3"></div>
+            <div class="box fa" data-row="2" data-column="4"></div>
+            <div class="box fa" data-row="2" data-column="5"></div>
+            <div class="box fa" data-row="2" data-column="6"></div>
+            <div class="box fa" data-row="2" data-column="7"></div>
+            <div class="box fa" data-row="2" data-column="8"></div>
+            <div class="box fa" data-row="2" data-column="9"></div>
+
+            <div class="box fa" data-row="3" data-column="0"></div>
+            <div class="box fa" data-row="3" data-column="1"></div>
+            <div class="box fa" data-row="3" data-column="2"></div>
+            <div class="box fa" data-row="3" data-column="3"></div>
+            <div class="box fa" data-row="3" data-column="4"></div>
+            <div class="box fa" data-row="3" data-column="5"></div>
+            <div class="box fa" data-row="3" data-column="6"></div>
+            <div class="box fa" data-row="3" data-column="7"></div>
+            <div class="box fa" data-row="3" data-column="8"></div>
+            <div class="box fa" data-row="3" data-column="9"></div>
+
+            <div class="box fa" data-row="4" data-column="0"></div>
+            <div class="box fa" data-row="4" data-column="1"></div>
+            <div class="box fa" data-row="4" data-column="2"></div>
+            <div class="box fa" data-row="4" data-column="3"></div>
+            <div class="box fa" data-row="4" data-column="4"></div>
+            <div class="box fa" data-row="4" data-column="5"></div>
+            <div class="box fa" data-row="4" data-column="6"></div>
+            <div class="box fa" data-row="4" data-column="7"></div>
+            <div class="box fa" data-row="4" data-column="8"></div>
+            <div class="box fa" data-row="4" data-column="9"></div>
+
+            <div class="box fa" data-row="5" data-column="0"></div>
+            <div class="box fa" data-row="5" data-column="1"></div>
+            <div class="box fa" data-row="5" data-column="2"></div>
+            <div class="box fa" data-row="5" data-column="3"></div>
+            <div class="box fa" data-row="5" data-column="4"></div>
+            <div class="box fa" data-row="5" data-column="5"></div>
+            <div class="box fa" data-row="5" data-column="6"></div>
+            <div class="box fa" data-row="5" data-column="7"></div>
+            <div class="box fa" data-row="5" data-column="8"></div>
+            <div class="box fa" data-row="5" data-column="9"></div>
+
+            <div class="box fa" data-row="6" data-column="0"></div>
+            <div class="box fa" data-row="6" data-column="1"></div>
+            <div class="box fa" data-row="6" data-column="2"></div>
+            <div class="box fa" data-row="6" data-column="3"></div>
+            <div class="box fa" data-row="6" data-column="4"></div>
+            <div class="box fa" data-row="6" data-column="5"></div>
+            <div class="box fa" data-row="6" data-column="6"></div>
+            <div class="box fa" data-row="6" data-column="7"></div>
+            <div class="box fa" data-row="6" data-column="8"></div>
+            <div class="box fa" data-row="6" data-column="9"></div>
+
+            <div class="box fa" data-row="7" data-column="0"></div>
+            <div class="box fa" data-row="7" data-column="1"></div>
+            <div class="box fa" data-row="7" data-column="2"></div>
+            <div class="box fa" data-row="7" data-column="3"></div>
+            <div class="box fa" data-row="7" data-column="4"></div>
+            <div class="box fa" data-row="7" data-column="5"></div>
+            <div class="box fa" data-row="7" data-column="6"></div>
+            <div class="box fa" data-row="7" data-column="7"></div>
+            <div class="box fa" data-row="7" data-column="8"></div>
+            <div class="box fa" data-row="7" data-column="9"></div>
+
+            <div class="box fa" data-row="8" data-column="0"></div>
+            <div class="box fa" data-row="8" data-column="1"></div>
+            <div class="box fa" data-row="8" data-column="2"></div>
+            <div class="box fa" data-row="8" data-column="3"></div>
+            <div class="box fa" data-row="8" data-column="4"></div>
+            <div class="box fa" data-row="8" data-column="5"></div>
+            <div class="box fa" data-row="8" data-column="6"></div>
+            <div class="box fa" data-row="8" data-column="7"></div>
+            <div class="box fa" data-row="8" data-column="8"></div>
+            <div class="box fa" data-row="8" data-column="9"></div>
+
+            <div class="box fa" data-row="9" data-column="0"></div>
+            <div class="box fa" data-row="9" data-column="1"></div>
+            <div class="box fa" data-row="9" data-column="2"></div>
+            <div class="box fa" data-row="9" data-column="3"></div>
+            <div class="box fa" data-row="9" data-column="4"></div>
+            <div class="box fa" data-row="9" data-column="5"></div>
+            <div class="box fa" data-row="9" data-column="6"></div>
+            <div class="box fa" data-row="9" data-column="7"></div>
+            <div class="box fa" data-row="9" data-column="8"></div>
+            <div class="box fa" data-row="9" data-column="9"></div>
+        </div>
+
+
+    </div>
+    <div class="container">
+        <br><br><br><br><br>
+        <a href="fight.html"><input type="button" value="Gotowy!"></a>
+    </div>
+    <div style="clear: both;"></div>
+
+
+    <br>
+
+</div>
+
+<div id="footer">Koło naukowe Ultimate &copy; 2019</div>
+
+</body>
+</html>

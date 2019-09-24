@@ -1,53 +1,119 @@
+const ships = [2,2,1,1,1]; //tablica zawierajaca ilosc ztatków odpowienio dla poszczególnych wielkości
+/*
+number / name / size
+1 aircraft curser 5
+1 battleship 4
+1 curiser 3
+2 destroyer 2
+2 submarine 1
+ */
 
+for (var r = 1; r <= 10; r++)
+    for (var c = 1; c <= 10; c++)
+        $("." + r + "-" + c).css("background-color", "white"); //ustawianie calej pierszej macierzy na kolor bialy
 
+$("th").mouseover(function () {
+    radio1Value = $("input[name='stat']:checked").val();
+    radio2Value = $("input[name='orientation']:checked").val();
+    kolor = this.style.backgroundColor;
 
-const board = [
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','','']
-];
+    row = $(this).data('row');
+    column = $(this).data('col');
 
-let size = $("input[name='stat']:checked").val();
-let orientation = $("input[name='orientation']:checked").val();
-const turn = "fas fa-ship";
-function pick(event) {
-    const {row, column } = event.target.dataset;
+    if (kolor !== "black") {
+        if (radio2Value == "pion") {
+            $(this).css("background-color", "pink");
+            for (var i = 1; i < radio1Value; i++) {
+                row++;
+                kolor = $('.' + row + '-' + column).css("background-color");
+                if (kolor !== 'rgb(0, 0, 0)')
+                    $("." + row + "-" + column).css("background-color", "pink");
+            }
 
-    if(board[row][column] !== '') return;
-
-
-    if(orientation === 'poziom' && column+size<10) {
-                for (let i = column; i < column+size; i++)
-                    board[row][i] = turn;
+        } else {
+            $(this).css("background-color", "pink");
+            for (var i = 1; i < radio1Value; i++) {
+                column++;
+                kolor = $('.' + row + '-' + column).css("background-color");
+                if (kolor !== 'rgb(0, 0, 0)')
+                    $("." + row + "-" + column).css("background-color", "pink");
+            }
+        }
     }
-    else
-        return;
-    if(orientation === 'pion' && row+size<10) {
-                for (let i = row; i < row+size; i++)
-                    board[i][column] = turn;
+});
+$("th").mouseout(function () {
+
+    kolor = $(this).css("background-color");
+    row = $(this).data('row');
+    column = $(this).data('col');
+
+    if (kolor == 'rgb(255, 192, 203)') {	//jesli rozowy
+        $(this).css("background-color", "white");  //to zmien na bialy
+
+        for (var i = 1; i <= radio1Value; i++) {
+            kolor = $('.' + row + '-' + column).css("background-color");
+            if (kolor == 'rgb(255, 192, 203)') { //jesli kolor rozowy
+                $("." + row + "-" + column).css("background-color", "white"); //to zmien kolor na bialy
+            }
+
+            if (radio2Value == "pion")
+                row++;
+            else
+                column++;
+        }
+    } else $("." + row + "-" + column).css("background-color", "black");
+});
+function checkship(orientation , row, column, size){ //funkcja sprawdzająca
+    if(ships[size-1] <= 0) return true;//czy mozna postawić statek
+    if( column +  size > 11  && orientation === "poziom") { //sprawdzenie czy postawiony statek nie wyjdzie poza tablice
+        alert("Nie można tak ustawić statku");
+        return true;
     }
-    else
-        return;
+    else if( row +  size > 11  && orientation === "pion") {
+        alert("Nie można tak ustawić statku");
+        return true;
+    }
+
+    // tu będą ify które będą łączyć się z backend i sprawdziać czy można ustawić statek
+
+    return false;
 }
 
+$('th').click(function(){ //po kliknięciu
+    let size = parseInt($("input[name='stat']:checked").val());
+    let orientation = $("input[name='orientation']:checked").val();
+    let color = this.style.backgroundColor;
+
+    let row = parseInt($(this).data('row'));
+    let column = parseInt($(this).data('col'));
+
+    if(checkship(orientation,row,column,size)) return;//sprawdzenie czy mozna postawić dany statek
+
+    if(orientation === "pion" ) {
+        for (var i = 0; i < size; i++) {
+            $("." + row + "-" + column).css("background-color", "black");
+            row+=1;
+
+        }
+    }
+    if(orientation === "poziom") {
+        for (var i = 0; i < size; i++) {
+            $("." + row + "-" + column).css("background-color", "black");
+            column+=1;
+        }
+    }
+
+});
 
 
 
 
-
-
+/*
 
 //COŚ TAM BEATY
 
 //$(document).ready(
-/*
+
 function setShip() {
     var radio1Value; //dlugosc statku
     var radio2Value; //orientacja statku

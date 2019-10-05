@@ -1,4 +1,3 @@
-
 function login() {
 
     var token;
@@ -10,7 +9,7 @@ function login() {
         xhr.addEventListener("load", function () {
             console.log("Wynik połączenia:");
             console.log(this);
-            if (this.status === 200){
+            if (this.status === 200) {
                 token = this.response;
                 alert(token);
             }
@@ -22,13 +21,12 @@ function login() {
         ///alert(credentials.userName);
         xhr.send(JSON.stringify(credentials));
 
-        if(token==-1)
+        if (token == -1)
             alert('Zzarejstruj się najepirw');
-        else if(token==0){
+        else if (token == 0) {
             alert('Urzytkownik zalogowany');
             location.href = "http://localhost:8126/Projekt-Student/game.html";
-        }
-        else
+        } else
             location.href = "http://localhost:8126/Projekt-Student/game.html";
     }
 }

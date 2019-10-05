@@ -1,47 +1,37 @@
-
-
-
 const board = [
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','',''],
-    ['','','','','','','','','','']
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', '']
 ];
 
 let size = $("input[name='stat']:checked").val();
 let orientation = $("input[name='orientation']:checked").val();
 const turn = "fas fa-ship";
+
 function pick(event) {
-    const {row, column } = event.target.dataset;
+    const {row, column} = event.target.dataset;
 
-    if(board[row][column] !== '') return;
+    if (board[row][column] !== '') return;
 
 
-    if(orientation === 'poziom' && column+size<10) {
-                for (let i = column; i < column+size; i++)
-                    board[row][i] = turn;
-    }
-    else
+    if (orientation === 'poziom' && column + size < 10) {
+        for (let i = column; i < column + size; i++)
+            board[row][i] = turn;
+    } else
         return;
-    if(orientation === 'pion' && row+size<10) {
-                for (let i = row; i < row+size; i++)
-                    board[i][column] = turn;
-    }
-    else
+    if (orientation === 'pion' && row + size < 10) {
+        for (let i = row; i < row + size; i++)
+            board[i][column] = turn;
+    } else
         return;
 }
-
-
-
-
-
-
 
 
 //COŚ TAM BEATY

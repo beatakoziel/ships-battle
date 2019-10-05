@@ -13,4 +13,4 @@ function logout() {
 }
 
 
-window.onload=logout;
+window.onload = logout;

@@ -4,6 +4,7 @@ function login() {
     var token;
 
     document.getElementById("login").onclick = function () {
+
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "http://localhost:8126/Projekt-Student/resources/user/login", true);
         xhr.setRequestHeader("Content-Type", "application/json")
@@ -35,3 +36,4 @@ function login() {
 
 window.onload = login;
 
+//  http://localhost:9002/ships-battle/user
